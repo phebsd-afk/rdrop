@@ -1,0 +1,7 @@
+{
+  "name": "Rain Drop deploy",
+  "description": "A renal health platform companion app tracking physical activity, medication adherence, and education for transplant recovery.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
