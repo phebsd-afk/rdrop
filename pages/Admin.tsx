@@ -1,14 +1,21 @@
 
-import React, { useState, useEffect } from 'react';
-import { Layout } from '../components/Layout';
-import { GoogleGenAI } from "@google/genai";
+//import React, { useState, useEffect } from 'react';
+//import { Layout } from '../components/Layout';
+//old import { GoogleGenAI } from "@google/genai";
+//new
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(
+ import.meta.env.VITE_GEMINI_API_KEY as string
+);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
 // Fix for process is not defined in browser/vite context for TS
-declare var process: {
-  env: {
-    API_KEY: string;
-  };
-};
+//declare var process: {
+  //env: {
+  //  API_KEY: string;
+ // };
+//};
 
 interface NotificationItem {
     id: number;

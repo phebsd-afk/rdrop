@@ -1,14 +1,27 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { GoogleGenAI, LiveServerMessage, Modality, Type, FunctionDeclaration } from "@google/genai";
+//import React, { useEffect, useRef, useState } from 'react';
+//import { useNavigate } from 'react-router-dom';
+//import {
+ //GoogleGenerativeAI,
+ //LiveServerMessage,
+ //Modality,
+ //Type,
+ //FunctionDeclaration,
+//} from "@google/generative-ai";
+
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(
+ import.meta.env.VITE_GEMINI_API_KEY as string
+);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
 // Fix for process is not defined in browser/vite context for TS
-declare var process: {
-  env: {
-    API_KEY: string;
-  };
-};
+//declare var process: {
+//  env: {
+ //   API_KEY: string;
+ // };
+//};
 
 interface LiveVoiceAssistantProps {
     onClose: () => void;
