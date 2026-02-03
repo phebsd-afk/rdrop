@@ -1,12 +1,8 @@
-//import React, { useState, useEffect } from 'react';
-//import { useNavigate } from 'react-router-dom';
-//import { Layout } from '../components/Layout';
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(
- import.meta.env.VITE_GEMINI_API_KEY as string
-);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Layout } from '../components/Layout';
+
 // Screen 1: Log Activity
 export const LogActivity: React.FC = () => {
      const navigate = useNavigate();
